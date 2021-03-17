@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.wrapper {
+  margin-bottom: 10px;
+}
+
+.tagsCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 200px;
+  margin: 0 auto;
+  border: black solid 1px;
+}
+
+.tag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: green solid 1px;
+}
+
+input {
+  border: black solid 2px;
+  border-radius: 5px;
+}
+
+.deleteTag {
+  padding: 0 5px;
+  border: black solid 1px;
+  cursor: pointer;
+  outline: none;
+}
+
+.deleteTag:hover {
+  background: #99ccff;
+}
+
+.tagName {
+  margin: 0 5px;
+}
+/*# sourceMappingURL=index.css.map */

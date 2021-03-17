@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.wrapper {
+  margin-bottom: 10px;
+}
+.addTag {
+}
+.tagsCard {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 200px;
+  margin: 0 auto;
+  border: black solid 1px;
+}
+.tag {
+  display: inline-flex;
+  justify-content: space-between;
+  border: green solid 1px;
+}
+
+input {
+  border: black solid 2px;
+  border-radius: 5px;
+}
+
+.deleteTag {
+  padding: 0 5px;
+  border: black solid 1px;
+  cursor: pointer;
+  outline: none;
+}
+
+.deleteTag:hover {
+  background: #99ccff;
+}
+
+.tagName {
+  margin: 0 5px;
+}
