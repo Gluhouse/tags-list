@@ -55,8 +55,8 @@ addTag = (array, tagName) => {
       id: uniqueId,
     });
     localStorage[localStorage.inUse] = JSON.stringify(array);
+    drawTags(array);
   }
-  drawTags(array);
 };
 
 // удаление из массива

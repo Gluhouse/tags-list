@@ -10,7 +10,12 @@
   margin-bottom: 10px;
 }
 
+.addTag {
+  padding: 5px;
+}
+
 .tagsCard {
+  min-height: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,18 +30,27 @@
 }
 
 .tag {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 80%;
+  height: 1.5rem;
+  margin: 0 auto 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   border: green solid 1px;
+}
+
+.tag > button {
+  margin-left: auto;
 }
 
 input {
   border: black solid 2px;
   border-radius: 5px;
+  padding: 5px 0;
 }
 
 .deleteTag {
