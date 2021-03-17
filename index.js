@@ -1,11 +1,14 @@
 app = () => {
-  //   const tags = [{ tagName: "testName", readOnly: false, id: 0 }];
+  // создаем дефолт массив, если его не существует
 
-  if (localStorage.tags === undefined) {
-    localStorage.tags = JSON.stringify([]);
+  if (localStorage.defaultTags === undefined) {
+    localStorage.defaultTags = JSON.stringify([]);
   }
+
+  // если массив для использования не выбран - задаем как выбор дефолтный массив
+
   if (localStorage.inUse === undefined) {
-    localStorage.inUse = "tags";
+    localStorage.inUse = "defaultTags";
   }
 
   const input = document.querySelector("#inputTag");
@@ -27,14 +30,20 @@ app = () => {
       deleteTag(event, currentTags());
     }
 
+    // вешаем на чекбокс обработчик, который меняет статус read only
+
     if (event.target.closest("input")) {
       let id = +event.target.closest(".tag").getAttribute("data-index");
       readOnly(id);
     }
   });
 
+  // отрисовываем теги при загрузке страницы
+
   drawTags(currentTags());
 };
+
+// добавление тега в массив
 
 addTag = (array, tagName) => {
   if (tagName !== "") {
@@ -50,6 +59,8 @@ addTag = (array, tagName) => {
   drawTags(array);
 };
 
+// удаление из массива
+
 deleteTag = (event, array = []) => {
   let id = +event.target.closest(".tag").getAttribute("data-index");
 
@@ -58,6 +69,8 @@ deleteTag = (event, array = []) => {
   localStorage[localStorage.inUse] = JSON.stringify(filtered);
   drawTags(filtered);
 };
+
+// отрисовка переданного массива
 
 drawTags = (array) => {
   tagsCard = document.querySelector(".tagsCard");
@@ -79,19 +92,26 @@ drawTags = (array) => {
   });
 };
 
-// Получаю array используемый в данный момент
+// Получем массив используемый в данный момент
 
 currentTags = () => {
   return JSON.parse(localStorage[localStorage.inUse]);
 };
 
+// Меняем используемый массив
+
 setTagsArray = (array) => {
   localStorage.inUse = array;
+
+  // Если такого массива не существует, создаем новый
+
   if (localStorage[array] === undefined) {
     localStorage[array] = JSON.stringify([]);
   }
   drawTags(currentTags());
 };
+
+// задаем тегу состояние read only
 
 readOnly = (id) => {
   let array = [...currentTags()];
